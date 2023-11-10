@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='background.gif') }}');
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        .header {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Proza Libre', sans-serif;
+            position: fixed;
+            text-decoration: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #6d6875;
+            text-decoration: none;
+            font-weight: 600;
+            animation: slideRight 5s ease forwards;
+        }
+
+        .navbar a {
+            display: inline-block;
+            font-size: 18px;
+            color: #6d6875;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 70px;
+            transition: .3s;
+            animation: slideTop 3s ease forwards;
+            animation-delay: calc(.3s * var(--i))
+        }
+
+        .navbar a:hover {
+            color: #fff;
+        }
+
+        .home {
+            height: 100vh;
+            color: #6d6875;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .home-content h2 {
+            font-size: 40px;
+            font-weight: 500;
+            font-family: 'Cormorant', sans-serif;
+            text-align: center;
+            line-height: 1.2;
+            margin: 0;
+            animation: slideTop 3s ease forwards;
+        }
+
+        .home-content h1 {
+            position: relative;
+            font-size: 100px;
+            font-weight: 500;
+            font-family: 'Cormorant', sans-serif;
+            text-align: center;
+            line-height: 1.2;
+            margin: 0;
+            animation: slideBottom 5s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .home-content h3 {
+            font-size: 17px;
+            font-weight: 300;
+            font-family: 'Proza Libre', sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            animation: slideTop 5s ease forwards;
+            animation-delay: .5s;
+        }
+
+        .home-content h4 {
+            font-size: 17px;
+            font-weight: 300;
+            font-family: 'Proza Libre', sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            animation: slideTop 5s ease forwards;
+            animation-delay: .5s;
+        }
+
+        .home-content h3::after {
+            content: "|";
+            animation: blinkCursor 1s infinite;
+        }
+
+    @keyframes blinkCursor {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        10% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        10% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideTop {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        10% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideBottom {
+        0% {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+        10% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">ella.mea</a>
+        <nav class="navbar">
+            <a href="/home" style="--i:1;">Home</a>
+            <a href="/profile" style="--i:2;">Profile</a>
+            <a href="/works" style="--i:3;">Works</a>
+            <a href="/contact" style="--i:4;">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h2>hello, world!</h2>
+            <h1><i>ella, here!</i></h1>
+            <h4>₊˚ ✧ ‿︵‿୨୧‿︵‿ ✧ ₊˚</h4>
+            <br>
+            <h3>A Computer Engineering Student from Polytechnic University of the Philippines.
+                <br>I am an aspiring software engineer with great interest in creating stuff all the time!</h3>
+            <br>
+            <br>
+            <h4>Feel free to explore!</h4>
+        </div>
+    </section>
+</body>
+</html>
